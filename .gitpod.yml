@@ -1,8 +1,8 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - command: cd ~
+  - command: cd /home/gitpod
   - command: mkdir .aws
   - command: echo '[default]'>>.aws/credentials
-  - command: echo 'aws_access_key_id=$AccessKeyId'>>.aws/credentials
-  - command: echo 'aws_secret_access_key=$SecretKey'>>.aws/credentials
+  - command: echo "aws_access_key_id=$AccessKeyId">>.aws/credentials
+  - command: echo "aws_secret_access_key=$SecretKey">>.aws/credentials
