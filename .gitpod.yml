@@ -5,3 +5,5 @@ tasks:
   - command: echo '[default]'>>/home/gitpod/.aws/credentials
   - command: echo "aws_access_key_id=$AccessKeyId">>/home/gitpod/.aws/credentials
   - command: echo "aws_secret_access_key=$SecretKey">>/home/gitpod/.aws/credentials
+  - command: aws eks --region us-east-2 update-kubeconfig --name EksContentRanker
+  
