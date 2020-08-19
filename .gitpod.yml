@@ -1,11 +1,13 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - command: mkdir /home/gitpod/.aws
-  - command: echo '[default]'>>/home/gitpod/.aws/credentials
-  - command: echo "aws_access_key_id=$AccessKeyId">>/home/gitpod/.aws/credentials
-  - command: echo "aws_secret_access_key=$SecretKey">>/home/gitpod/.aws/credentials
-  - command: aws eks --region us-east-2 update-kubeconfig --name EksContentRanker
+  - init: mkdir /home/gitpod/.aws && echo '[default]'>>/home/gitpod/.aws/credentials && 
+          echo "aws_access_key_id=$AccessKeyId">>/home/gitpod/.aws/credentials &&
+          echo "aws_secret_access_key=$SecretKey">>/home/gitpod/.aws/credentials && 
+          echo "[depl_arch]">>/home/gitpod/.aws/credentials && 
+          echo "role_arn=arn:aws:iam::642244917110:role/Depl_Arch_Admin">>/home/gitpod/.aws/credentials &&
+          echo "source_profile=$RoleArn">>/home/gitpod/.aws/credentials &&
+          aws eks --region eu-west-1 update-kubeconfig --name service-content-ranker 
 ports:
   - port: 8080
 
