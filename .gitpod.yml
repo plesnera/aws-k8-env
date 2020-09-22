@@ -5,8 +5,8 @@ tasks:
           echo "aws_access_key_id=$AccessKeyId">>/home/gitpod/.aws/credentials &&
           echo "aws_secret_access_key=$SecretKey">>/home/gitpod/.aws/credentials && 
           echo "[depl_arch]">>/home/gitpod/.aws/credentials && 
-          echo "role_arn=arn:aws:iam::642244917110:role/Depl_Arch_Admin">>/home/gitpod/.aws/credentials &&
-          echo "source_profile=$RoleArn">>/home/gitpod/.aws/credentials 
+          echo "role_arn=$RoleArn>>/home/gitpod/.aws/credentials &&
+          echo "source_profile=default">>/home/gitpod/.aws/credentials 
 ports:
   - port: 8080
 
