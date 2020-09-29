@@ -1,6 +1,6 @@
 # AWS k8 Docker and Gitpod env
 Gitpod AWS environment for doing k8 related work with all the necessary cli tools: eksctl, kubectl, kfctl.
-There's also a standalone docker container for local aws evelopment where the easiest is to mount your local credentials: 
+There's also a standalone docker container for local aws development which will bind mount your local .aws and .kube credentials if you use the included docker_run.sh and included the image name as a parameter.
 
 ```docker run -it -v ~/.aws:/root/.aws [image] ```
 
