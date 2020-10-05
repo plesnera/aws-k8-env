@@ -1,1 +1,7 @@
-docker run -it -v ~/.aws:/root/.aws -v ~/.kube:/root/.kube --rm $1
+#!/usr/bin/env bash
+
+docker run  \
+	-it --rm \
+	-v $HOME/.aws:/root/.aws \
+	-v $HOME/.kube:/root/.kube \
+	"$@"
